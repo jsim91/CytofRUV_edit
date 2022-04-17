@@ -58,8 +58,8 @@ save_norm_files<- function(data,norm_cells, fcs_raw, md,panel,output_dir,k,other
   num_files <- length(data$fcs_raw)
   # Panel markers fullname
   length_other_markers=length(other_markers_fcs_file)
-  all_fullname_markers=c("Time",other_markers_fcs_file,c(panel$fcs_colname[panel$antigen%in%data$lineage_markers],
-                                                         panel$fcs_colname[panel$antigen%in%data$functional_markers]))
+  all_fullname_markers=c(other_markers_fcs_file,c(panel$fcs_colname[panel$antigen%in%data$lineage_markers],
+                                                  panel$fcs_colname[panel$antigen%in%data$functional_markers]))
 
   fcs_raw_asinh=fsApply(fcs_raw,function(x,cofactor = 5){
     expr <- exprs(x)
