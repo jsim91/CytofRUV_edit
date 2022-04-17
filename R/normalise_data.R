@@ -95,7 +95,7 @@ save_norm_files<- function(data,norm_cells, fcs_raw, md,panel,output_dir,k,other
       dir_new_md$file_name[i] <- file.path(output_dir,paste("Norm_RUVIII_k",k,"_",md$file_name[i],sep=""))
       new_md$file_name[i] <- file.path(paste("Norm_RUVIII_k",k,"_",md$file_name[i],sep=""))
       tmp_exp=exprs(fcs_norm[[i]])
-      tmp_exp[,all_fullname_markers[(2+length_other_markers):length(all_fullname_markers)]]= norm_cells[inds,c(data$lineage_markers,data$functional_markers)]
+      tmp_exp[,all_fullname_markers[(1+length_other_markers):length(all_fullname_markers)]]= norm_cells[inds,c(data$lineage_markers,data$functional_markers)]
       exprs(fcs_norm[[i]])=tmp_exp
       write.FCS(subset_flowframe(fcs_norm[[i]], corrected_inds), dir_new_md$file_name[i])
     }
