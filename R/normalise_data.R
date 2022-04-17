@@ -64,7 +64,7 @@ save_norm_files<- function(data,norm_cells, fcs_raw, md,panel,output_dir,k,other
   fcs_raw_asinh=fsApply(fcs_raw,function(x,cofactor = 5){
     expr <- exprs(x)
     expr <- expr[,all_fullname_markers]
-    expr[,all_fullname_markers[2:length(all_fullname_markers)]] <- asinh(expr[,all_fullname_markers[2:length(all_fullname_markers)]] / cofactor)
+    expr[,all_fullname_markers[1:length(all_fullname_markers)]] <- asinh(expr[,all_fullname_markers[1:length(all_fullname_markers)]] / cofactor)
     exprs(x) <- expr
     x
   })
