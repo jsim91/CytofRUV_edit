@@ -1,3 +1,4 @@
+Forked to remove the expectation that input files have 'Time' as one of the parameters present. Often after file cleanup, empty channels or unneeded variables such as 'Time' are removed to decrease file size.
 
 # CytofRUV
 
